@@ -1,0 +1,43 @@
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+  <label for="nombre">
+    Name:
+    <input id="nombre" type="text" formControlName="nombre">
+  </label>
+
+  <label for="estadio">
+    Stadium:
+    <input id="estadio" type="text" formControlName="estadio">
+  </label>
+
+  <label for="sitioWeb">
+    Website:
+    <input id="sitioWeb" type="text" formControlName="sitioWeb">
+  </label>
+
+  <label for="nacionalidad">
+    Nationality:
+    <input id="nacionalidad" type="text" formControlName="nacionalidad">
+  </label>
+
+  <label for="fundacion">
+    Foundation Date:
+    <input id="fundacion" type="date" formControlName="fundacion">
+  </label>
+
+  <label for="entrenador">
+    Coach:
+    <input id="entrenador" type="text" formControlName="entrenador">
+  </label>
+
+  <label for="capacidad">
+    Capacity:
+    <input id="capacidad" type="number" formControlName="capacidad">
+  </label>
+
+  <label for="valor">
+    Value:
+    <input id="valor" type="number" formControlName="valor">
+  </label>
+
+  <button type="submit">Create</button>
+</form>

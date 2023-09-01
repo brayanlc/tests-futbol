@@ -1,0 +1,43 @@
+<form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+  <label for="dateFrom">
+    Date from:
+    <input id="dateFrom" type="date" formControlName="dateFrom" />
+  </label>
+
+  <label for="dateTo">
+    Date to:
+    <input id="dateTo" type="date" formControlName="dateTo" />
+  </label>
+
+  <button type="submit" (click)="filterByDate()">Filter</button>
+</form>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Stadium</th>
+    <th>Website</th>
+    <th>Nationality</th>
+    <th>Foundation</th>
+    <th>Coach</th>
+    <th>Capacity</th>
+    <th>Value</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let team of teams$ | async">
+    <td>{{ team?.id }}</td>
+    <td>{{ team?.nombre }}</td>
+    <td>{{ team?.estadio }}</td>
+    <td>{{ team?.sitioWeb }}</td>
+    <td>{{ team?.nacionalidad }}</td>
+    <td>{{ team?.fundacion }}</td>
+    <td>{{ team?.entrenador }}</td>
+    <td>{{ team?.capacidad }}</td>
+    <td>{{ team?.valor }}</td>
+    <td>
+      <button (click)="editTeam(team.id)">Edit</button>
+      <button (click)="deleteTeam(team.id)">Delete</button>
+    </td>
+  </tr>
+</table>
